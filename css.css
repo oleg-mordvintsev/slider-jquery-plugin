@@ -1,0 +1,449 @@
+/* Общие */
+html, body {
+    font-size: 10px;
+    font-family: Arial;
+    margin: 0;
+}
+
+#Slider {
+    width: 100%;
+    height: 40em;
+    position: relative
+}
+
+/* Контейнер */
+#Slider > .Slider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    z-index: 0;
+    text-align: center
+}
+
+/* Слайдер ссылка */
+#Slider > .Slider > a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Фоновая подложка */
+#Slider > .Slider > a > .BG {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#Slider > .Slider > a > .BG > .scale {
+    background-color: transparent;
+    background-image:;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transform-origin: center 30%;
+    -ms-transform-origin: center 30%;
+    transform-origin: center 30%;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    width: 100%;
+    height: 100%;
+}
+
+#Slider > .Slider > a > .BG > .scale.blur {
+    -webkit-filter: blur(9em);
+    filter: blur(9em);
+}
+
+/* Изображение слайда */
+#Slider > .Slider > a > .Slide {
+    height: 100%;
+}
+
+#Slider > .Slider > a > .Slide > img {
+    height: 100%;
+}
+
+/* HTML элементы */
+#Slider > .Slider > a > .Html {
+    /* Данные на всю ширину, см. далее метку SLIDETEXTWIDTH */
+    /* width:98rem; */
+    /*Данные на половину ширины с размещение слева*/
+    width: 48rem;
+    padding-right: 48rem;
+    /*Данные на половину ширины с размещение справа*/
+    /* width: 48rem; */
+    /* padding-left: 48rem; */
+    position: absolute;
+    z-index: 3;
+    overflow: hidden;
+    margin: 0.5em auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: left;
+    font-size: 1.6em;
+    color: #fff;
+}
+
+#Slider > .Slider > a > .Html * {
+    text-shadow: 0 .07em .03em rgba(0, 0, 0, 1), 0 -.03em .03em rgba(0, 0, 0, 1);
+}
+
+#Slider > .Slider > a > .Html h1 {
+    font-size: 4em;
+}
+
+#Slider > .Slider > a > .Html h2 {
+    font-size: 3.4em;
+}
+
+#Slider > .Slider > a > .Html h3 {
+    font-size: 3em;
+}
+
+#Slider > .Slider > a > .Html h4 {
+    font-size: 2.6em;
+}
+
+#Slider > .Slider > a > .Html h5 {
+    font-size: 2.2em;
+}
+
+#Slider > .Slider > a > .Html h6 {
+    font-size: 1.8em;
+}
+
+#Slider > .Slider > a > .Html h1,
+#Slider > .Slider > a > .Html h2,
+#Slider > .Slider > a > .Html h3,
+#Slider > .Slider > a > .Html h4,
+#Slider > .Slider > a > .Html h5,
+#Slider > .Slider > a > .Html h6 {
+    text-shadow: 0 .03em .03em rgba(0, 0, 0, 1);
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+#Slider > .Slider > a > .Html :after,
+#Slider > .Slider > a > .Html :before {
+    display: none
+}
+
+#Slider > .Slider > a > .Html p {
+    text-indent: 0;
+}
+
+/* HTML элементы для редактора */
+#tinymce {
+    color: #fff;
+    width: 30em;
+    height: 25em;
+    border: 0.125em dotted #ff8080;
+}
+
+#tinymce * {
+    text-shadow: 0 .03em .03em rgba(0, 0, 0, 1), 0 -.03em .03em rgba(0, 0, 0, 1);
+}
+
+#tinymce h1 {
+    font-size: 4em;
+}
+
+#tinymce h2 {
+    font-size: 3.4em;
+}
+
+#tinymce h3 {
+    font-size: 3em;
+}
+
+#tinymce h4 {
+    font-size: 2.6em;
+}
+
+#tinymce h5 {
+    font-size: 2.2em;
+}
+
+#tinymce h6 {
+    font-size: 1.8em;
+}
+
+#tinymce h1,
+#tinymce h2,
+#tinymce h3,
+#tinymce h4,
+#tinymce h5,
+#tinymce h6 {
+    text-shadow: 0 .03em .03em rgba(0, 0, 0, 1);
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+#tinymce :after,
+#tinymce :before {
+    display: none
+}
+
+#tinymce p {
+    text-indent: 0;
+}
+
+/* Левая кнопка - предыдущий слайд */
+#Slider > .Left {
+    width: 9.6em;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA15JREFUeNrsm91rklEcx1WMRt4EMjVTcBqSRNlaL1e7EaKgC5XpJv4bXmyti12t9GL0L3Qh4Su6i4JuvBSysmzdGMwG28SXebdRgWm/85SiQ1ro85zzO8924CBMdH4+z/e8PD+Pym63qzjNTaU45U097guVSiWLz3oB+jnoP6F/h/6LPDFJinlJwHnol/R6/bVoNLpcKBQyuVwuQK7DpG+sHNcexQQQ+MtarXYmm82uGwyGe3//3q3Valfn5+e/yjkBPXjrMXjhGmg0muvM5gAG8HcHn+x0Onubm5uv5DoE/gnfbrfr5XL5vsfj2ZLjJHgifKlUegDwX5gug1LDQ7yfwqx/ZxR8IBD4TC683DZCUwRep9NRg8ckgMAbCXw6naYGj0XAEDyMeWrwGOaAXuxnMpnMM3i8TROedQKYw7NMwCB8GB7nWMCzSgAaeBYCBHij0WgF+AhreNoC+vDJZJJc+Vus4WkKQAlPaxLsw6dSqfD09DQaeBoJQA0vdQIG4SMAP4sNXsoECPBms9mGGV6qBBB4E8Bb4/E4gb+JFV6KBHAFL7YAAR6ajRd4MQX04ROJRJgXeLEEcAsvhgChhmexWGyww4vwBk/aJGVxIs8A/Uo+n3/OcpPDqixOltCLoVBobhR8sVh8iPnKY6gInQ0B3odAB3oL+n4wGFw9ODgoDY0PtVrvdDrfxGKxGwoRvsbGOgTIQYX9nZ2dbb/fv9xsNj/xJkGMOeAH9D1o24uLiyu8SRBrEuRWgpirQF/C0tISN8NB7GVQkLC7u1vhRYIU+4CehF4SPmKWIOUJEWolMawnREgS9qvVasXn85EkFDEmQeqt8KCEFYwSaNwLDEloNBqoJNC6GepLgB0jKgk07wZRSmBxTlD0r8d5OycoJAES8M3r9ZIkfGCZBFYFkeMS3rOSwLIiNCjhMSsJrEtiPQkVIqFWq72jLQFDTZBIqBIJCwsLq7QlYCmKDkmo1+vUJGA7Lj/WYWk5HZcXaoytVqvidrvJcChInYSzH0wocLZ+EgDyyagkOByO12tra1NymQT/R8LboQ+uUplgmDySs4CTJHSPjo625DoHjJoTdLAqmDY2Nrx2u3328PDwhcvlevlnCujKXoAw9BUS/HSWJwGS3A6rWfxTTO23AAMAsTorWMQ+VkwAAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    opacity: 0.4;
+    left: 0;
+    cursor: pointer;
+}
+
+#Slider > .Left:hover {
+    background-color: rgba(150, 150, 150, 0.3);
+    opacity: 0.8;
+}
+
+/* Правая кнопка - следующий слайд */
+#Slider > .Right {
+    width: 9.6em;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAsNJREFUeNrkm89rE1EQx3fXpVoS8JBDEs3Jg0uobY724iGnFjwkgRyCh+D/kIOgQkD0Hwk55LabQ6Ui5NIc2hwiUUEJRS/RJIUIHiKoMek8ayWUtpTue29mNgPD/gjs5vth5uW9mTxzNpsZi2yWseBm+32AaZricAV8Gfwq+G/wH+AT3WIuE80yIsBsNBqFVqvlVqvVR9FodAXuxf/BIG+m3zGg2WzejsViH8WzxPVgMNjNZrNPR6PRZ7j8Av4z0BEQCoVWj8ULAxjrruu+iEQit+DyJvVI8A2gXq9vTafT3vy9eDx+FyA85wDBdwqIQdDzvFXHcV7bth2d/6zf7+/lcjmRDp90pAPWIGhAzr/vdDobk8lkyC0SZM0DZoVC4S1HCDInQiwhyJ4JsoOgYirMCoKqtQAbCCoXQywgqF4NkoegYzlMGoKuegBZCDoLIiQh6K4IkYOAURIjBQGrJkgGAmZRlAQE7KowOgQKZXFUCFT6AmgQKDVGUCBQ6wxph0CxNaYVAtXe4EUh3ABf8vMiKWVxhWbWarW1VCr16mTJvdfr7aTT6cdwug9+AD5FK4urjoR2u715MhISicS9YrGYhNPrxlFzNlApoM1s4t/vOAW2T0uBSqXyAU6/g/8JYgScmf+i5ZbP558ZR+22byL/gwbgXPFz/cav4L+C9jN4UfFSmq3WIounBkC7eEoAUMRTAYAmngIAVPHYANDFYwIgIR4LABnxGABIidcNgJx4nQBIitcFgKx4HQBIi1cNgLx4lQBYiFcFgI14FQBYiZcNgJ14mQBYihcmpSzued4dx3HYiZcCoFwuX0smky8ty2InXkoKZDKZ+yA+wVG8FADj8fgdHP53JcW2ORD/hIP4v4OXhO6w2Dj5IBwOP+x2u29KpZI7HA7FLrID3eIvo0VWe5zt1lnq/w9QDsDGeCklOxRgALCGGqvFpSHhAAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    opacity: 0.4;
+    right: 0;
+    cursor: pointer;
+}
+
+#Slider > .Right:hover {
+    background-color: rgba(150, 150, 150, 0.3);
+    opacity: 0.8;
+}
+
+/* Круглые кнопки быстрого перехода к конкретному слайду */
+#Slider > .Control {
+    width: 100%;
+    height: 3.2em;
+    line-height: 3.2em;
+    position: absolute;
+    vertical-align: middle;
+    text-align: center;
+    bottom: 0;
+    opacity: 0.7;
+    z-index: 3;
+}
+
+#Slider > .Control:hover {
+    opacity: 1;
+}
+
+#Slider > .Control > b {
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #fff;
+    border-radius: 50%;
+    border: solid 0.3em #999;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    margin: 0.2em;
+}
+
+#Slider > .Control > b:hover {
+    background-color: #999;
+    border: solid 0.3em #fff;
+}
+
+#Slider > .Control > b.active {
+    border: solid 0.3em #333;
+}
+
+/* MEDIA v3.0 */
+@media only screen and (max-width: 359px) {
+    /*Основа*/
+    #Slider {
+        /* SLIDETEXTWIDTH - на всю ширину*/
+        /* height:13em; */
+        /* SLIDETEXTWIDTH - половина */
+        height: 26em;
+    }
+
+    /* HTML элементы */
+    #Slider > .Slider > a > .Html {
+        width: 32rem;
+        /* SLIDETEXTWIDTH - на всю ширину*/
+        /* font-size:.52em; */
+        /* SLIDETEXTWIDTH - половина */
+        font-size: 1.04em;
+        margin: .2em;
+        padding-right: 0;
+    }
+
+    /* Левая кнопка - предыдущий слайд */
+    #Slider > .Left {
+        width: 5.2em;
+        background-size: 80%;
+    }
+
+    /* Правая кнопка - следующий слайд */
+    #Slider > .Right {
+        width: 5.2em;
+        background-size: 80%;
+    }
+
+    /* Круглые кнопки быстрого перехода к конкретному слайду */
+    #Slider > .Control {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 399px) {
+    /*Основа*/
+    #Slider {
+        /* SLIDETEXTWIDTH - на всю ширину*/
+        /* height:14.6em; */
+        /* SLIDETEXTWIDTH - половина */
+        height: 29.2em;
+    }
+
+    /* HTML элементы */
+    #Slider > .Slider > a > .Html {
+        width: 36rem;
+        /* SLIDETEXTWIDTH - на всю ширину*/
+        /* font-size:.584em; */
+        /* SLIDETEXTWIDTH - половина */
+        font-size: 1.168em;
+        padding-right: 0;
+    }
+
+    /* Левая кнопка - предыдущий слайд */
+    #Slider > .Left {
+        width: 5.84em;
+        background-size: 80%;
+    }
+
+    /* Правая кнопка - следующий слайд */
+    #Slider > .Right {
+        width: 5.84em;
+        background-size: 80%;
+    }
+
+    /* Круглые кнопки быстрого перехода к конкретному слайду */
+    #Slider > .Control {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 639px) {
+    /*Основа*/
+    #Slider {
+        /* SLIDETEXTWIDTH - на всю ширину*/
+        /* height:16.4em; */
+        /* SLIDETEXTWIDTH - половина */
+        height: 32.8em;
+    }
+
+    /* HTML элементы */
+    #Slider > .Slider > a > .Html {
+        width: 40rem;
+        /* SLIDETEXTWIDTH - на всю ширину*/
+        /* font-size:.656em; */
+        /* SLIDETEXTWIDTH - половина */
+        font-size: 1.312em;
+        padding-right: 0;
+    }
+
+    /* Левая кнопка - предыдущий слайд */
+    #Slider > .Left {
+        width: 6.56em;
+    }
+
+    /* Правая кнопка - следующий слайд */
+    #Slider > .Right {
+        width: 6.56em;
+    }
+
+    /* Круглые кнопки быстрого перехода к конкретному слайду */
+    #Slider > .Control {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 799px) {
+    /*Основа*/
+    #Slider {
+        height: 26em;
+    }
+
+    /* HTML элементы */
+    #Slider > .Slider > a > .Html {
+        font-size: 1.04em;
+        /* Данные на всю ширину SLIDETEXTWIDTH */
+        /* width:64rem; */
+        /*Данные на половину ширины с размещение слева*/
+        width: 32rem;
+        padding-right: 32rem;
+        /*Данные на половину ширины с размещение справа*/
+        /* width: 32rem; */
+        /* padding-left: 32rem; */
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 979px) {
+    /*Основа*/
+    #Slider {
+        height: 32.6em;
+    }
+
+    /* HTML элементы */
+    #Slider > .Slider > a > .Html {
+        font-size: 1.304em;
+        /* Данные на всю ширину SLIDETEXTWIDTH */
+        /* width:80rem; */
+        /*Данные на половину ширины с размещение слева*/
+        width: 40rem;
+        padding-right: 40rem;
+        /*Данные на половину ширины с размещение справа*/
+        /* width: 40rem; */
+        /* padding-left: 40rem; */
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    /*Основа*/
+    #Slider {
+        height: 49em;
+    }
+
+    /* HTML элементы */
+    #Slider > .Slider > a > .Html {
+        font-size: 1.96em;
+        /* Данные на всю ширину SLIDETEXTWIDTH */
+        /* width:120rem; */
+        /*Данные на половину ширины с размещение слева*/
+        width: 60rem;
+        padding-right: 60rem;
+        /*Данные на половину ширины с размещение справа*/
+        /* width: 60rem; */
+        /* padding-left: 60rem; */
+    }
+}
